@@ -1,11 +1,6 @@
 import NextAuth from "next-auth";
 import { User } from "../user";
-
-type BackendTokens = {
-  accessToken: string;
-  refreshToken: string;
-  expiresIn: number;
-};
+import { BackendTokens } from "../backend-tokens";
 
 declare module "next-auth" {
   interface Session {
