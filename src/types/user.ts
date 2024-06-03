@@ -1,10 +1,10 @@
 export type User = {
-  displayName: string;
-  email: string;
+  id: string;
   firstName: string;
   lastName: string;
+  displayName: string;
+  email: string;
   profileImage: string;
   addresses: string[];
   wishlist: string[];
-  id: string;
 };

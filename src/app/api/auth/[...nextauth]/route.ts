@@ -1,6 +1,23 @@
 import { NextAuthOptions } from "next-auth";
+import { JWT } from "next-auth/jwt";
 import NextAuth from "next-auth/next";
 import Credentials from "next-auth/providers/credentials";
+
+async function refreshToken(token: JWT): Promise<JWT> {
+  const res = await fetch("https://furniro-b92o.onrender.com/auth/refresh", {
+    method: "POST",
+    headers: {
+      authorization: `Refresh ${token.tokens.refreshToken}`,
+    },
+  });
+
+  const tokens = await res.json();
+
+  return {
+    ...token,
+    tokens,
+  };
+}
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -51,7 +68,11 @@ export const authOptions: NextAuthOptions = {
         return { ...token, ...user };
       }
 
-      return token;
+      const currentTimeMs = new Date().getTime();
+
+      if (currentTimeMs < token.tokens.expiresIn) return token;
+
+      return refreshToken(token);
     },
 
     async session({ token, session }) {
