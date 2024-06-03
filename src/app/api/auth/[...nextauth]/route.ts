@@ -1,17 +1,16 @@
+import { axios } from "@/lib/axios";
+import { BackendTokens } from "@/types";
 import { NextAuthOptions } from "next-auth";
 import { JWT } from "next-auth/jwt";
 import NextAuth from "next-auth/next";
 import Credentials from "next-auth/providers/credentials";
 
 async function refreshToken(token: JWT): Promise<JWT> {
-  const res = await fetch("https://furniro-b92o.onrender.com/auth/refresh", {
-    method: "POST",
+  const { data: tokens } = await axios.post<BackendTokens>("/auth/refresh", {
     headers: {
       authorization: `Refresh ${token.tokens.refreshToken}`,
     },
   });
-
-  const tokens = await res.json();
 
   return {
     ...token,
@@ -39,24 +38,16 @@ export const authOptions: NextAuthOptions = {
         if (!credentials?.email || !credentials?.password) return null;
 
         const { email, password } = credentials;
+        const res = await axios.post("/auth/login", { email, password });
 
-        const res = await fetch("https://furniro-b92o.onrender.com/auth/login", {
-          method: "POST",
-          body: JSON.stringify({
-            email,
-            password,
-          }),
-          headers: {
-            "Content-type": "application/json",
-          },
-        });
+        console.log(res.data);
 
         if (res.status !== 201) {
-          console.log(res);
+          console.log(res.data);
           return null;
         }
 
-        const user = await res.json();
+        const user = await res.data;
 
         return user;
       },

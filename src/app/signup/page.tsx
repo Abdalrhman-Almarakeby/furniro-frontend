@@ -1,5 +1,6 @@
 "use client";
 
+import { axios } from "@/lib/axios";
 import { useRef } from "react";
 
 export default function Page() {
@@ -15,20 +16,12 @@ export default function Page() {
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
 
-    const res = await fetch("https://furniro-b92o.onrender.com/auth/register", {
-      method: "POST",
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        email,
-        password,
-      }),
-      headers: {
-        "Content-type": "application/json",
-      },
+    const { data } = await axios.post("/auth/register", {
+      firstName,
+      lastName,
+      email,
+      password,
     });
-    
-    const data = await res.json()
 
     console.log(data);
   };

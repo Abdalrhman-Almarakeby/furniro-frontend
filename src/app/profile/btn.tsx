@@ -1,5 +1,6 @@
 "use client";
 
+import { axios } from "@/lib/axios";
 import { useSession } from "next-auth/react";
 
 export function Btn({ id }: { id: string }) {
@@ -13,20 +14,20 @@ export function Btn({ id }: { id: string }) {
     if (!session) {
       return "1";
     }
-    const res = await fetch(`https://furniro-b92o.onrender.com/users/${id}`, {
-      method: "PATCH",
-      body: JSON.stringify({
+
+    const res = await axios.patch(
+      `/users/${id}`,
+      {
         displayName: "YYYY",
-      }),
-      headers: {
-        "Content-type": "application/json",
-        authorization: `Bearer ${session.tokens.accessToken}`,
       },
-    });
+      {
+        headers: {
+          Authorization: `Bearer ${session.tokens.accessToken}`,
+        },
+      }
+    );
 
-    const data = await res.json();
-
-    console.log(data);
+    console.log(res.data);
   }
 
   return <button onClick={updateName}>Update Name</button>;
