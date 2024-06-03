@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 import { Btn } from "./btn";
 
 export default async function Page() {
@@ -11,10 +12,9 @@ export default async function Page() {
 
   const { profileImage, displayName, firstName, lastName, email, id } = session.user;
 
-  // Azfluyfljhgljglkjglkjhg
   return (
     <div>
-      <img src={profileImage} alt="" />
+      <Image src={profileImage} alt="profile image" />
       <p>Display Name: {displayName}</p>
       <p>First Name: {firstName}</p>
       <p>Last Name: {lastName}</p>
