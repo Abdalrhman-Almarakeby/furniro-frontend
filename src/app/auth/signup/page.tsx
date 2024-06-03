@@ -16,14 +16,12 @@ export default function Page() {
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
 
-    const { data } = await axios.post("/auth/register", {
+    await axios.post("/auth/register", {
       firstName,
       lastName,
       email,
       password,
     });
-
-    console.log(data);
   };
 
   return (

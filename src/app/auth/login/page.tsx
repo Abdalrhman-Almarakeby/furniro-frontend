@@ -12,7 +12,7 @@ export default function Page() {
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
 
-    const res = await signIn("credentials", {
+    await signIn("credentials", {
       email,
       password,
       redirect: true,

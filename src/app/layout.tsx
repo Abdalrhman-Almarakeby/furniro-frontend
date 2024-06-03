@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { Providers } from "@/contexts/providers";
 import "./globals.css";
-import Link from "next/link";
 
 export default function RootLayout({
   children,
