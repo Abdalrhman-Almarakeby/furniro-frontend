@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
     return (
       <>
         <p>{session.user.displayName}</p>
-        <Link href={"/api/auth/signout"}>Sing out</Link>
+        <button onClick={() => signOut()}>Sing out</button>
         <br />
         <Link href={"/profile"}>Profile</Link>
       </>
@@ -23,9 +23,9 @@ export default function Home() {
 
   return (
     <>
-      <Link href={"/api/auth/signin"}>Sing in</Link>
+      <Link href={"/auth/login"}>Sing in</Link>
       <br />
-      <Link href={"/signup"}>Sing up</Link>
+      <Link href={"/auth/signup"}>Sing up</Link>
     </>
   );
 }

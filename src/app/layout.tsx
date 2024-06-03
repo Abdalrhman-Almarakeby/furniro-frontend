@@ -1,5 +1,6 @@
 import { Providers } from "@/contexts/providers";
 import "./globals.css";
+import Link from "next/link";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <header>
+            <Link href="/">Home</Link>
+            <br />
+
+            <Link href="/profile">Profile</Link>
+          </header>
+          {children}
+        </Providers>
       </body>
     </html>
   );
