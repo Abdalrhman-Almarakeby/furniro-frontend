@@ -22,10 +22,10 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className="text-red-900">
       <Link href={"/auth/login"}>Sing in</Link>
       <br />
       <Link href={"/auth/signup"}>Sing up</Link>
-    </>
+    </div>
   );
 }
