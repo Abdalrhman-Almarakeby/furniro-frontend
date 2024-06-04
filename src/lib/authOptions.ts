@@ -59,5 +59,6 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: "/auth/login",
+    verifyRequest: "/auth/verify-email",
   },
 };
