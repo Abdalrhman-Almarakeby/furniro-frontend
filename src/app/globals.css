@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* typography */
+  .hero {
+    @apply font-medium text-8xl -tracking-[2%] leading-[96px];
+  }
+
+  .heading {
+    @apply font-medium -tracing-[1px];
+  }
+
+  .h1 {
+    @apply heading text-[5rem] leading-[84px] -tracking-[3px];
+  }
+
+  .h2 {
+    @apply heading text-[4.5rem] leading-[76px] -tracing-[2px];
+  }
+
+  .h3 {
+    @apply heading text-[3.375rem] leading-[58px];
+  }
+
+  .h4 {
+    @apply heading text-[2.5rem] leading-[44px];
+  }
+
+  .h5 {
+    @apply heading text-[2.125rem] leading-[38px];
+  }
+
+  .h6 {
+    @apply heading text-[1.75rem] leading-[34px];
+  }
+
+  .h7 {
+    @apply heading text-[1.25rem] leading-[28px];
+  }
+}

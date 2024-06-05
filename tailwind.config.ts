@@ -13,6 +13,10 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        "2xl": "1.375rem",
+        "3xl": "1.5rem",
+      },
       colors: {
         "neutral-1": "#fefefe",
         "neutral-2": "#f3f5f7",
@@ -21,6 +25,10 @@ const config = {
         "neutral-5": "#343839",
         "neutral-6": "#232627",
         "neutral-7": "#141718",
+        blue: "#377dff",
+        green: "#38cb89",
+        orange: "#ffab00",
+        red: "#ff5630",
       },
       keyframes: {
         "accordion-down": {
