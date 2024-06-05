@@ -1,59 +1,29 @@
-"use client";
-
-import { signIn } from "next-auth/react";
-import { useRef } from "react";
+import Link from "next/link";
+import { Input } from "@/components/form/input";
 
 export default function Page() {
-  const emailRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const email = emailRef.current?.value;
-    const password = passwordRef.current?.value;
-
-    await signIn("credentials", {
-      email,
-      password,
-      redirect: true,
-      callbackUrl: "/",
-    });
-  };
-
   return (
-    <form
-      className="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md"
-      onSubmit={handleSubmit}
-    >
-      <div className="mb-4">
-        <label htmlFor="email" className="block font-medium mb-1">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          className="w-full border border-gray-300 rounded-md px-3 py-2"
-          ref={emailRef}
-        />
+    <form className="space-y-12">
+      <div className="space-y-5">
+        <h1 className="h4 text-neutral-7">Log in</h1>
+        <p className="text-neutral-4">
+          Don<>&apos;</>t have an account yet?{" "}
+          <Link href="/auth/signup" className="text-green font-semibold">
+            Sign up
+          </Link>
+        </p>
       </div>
-      <div className="mb-4">
-        <label htmlFor="password" className="block font-medium mb-1">
-          Password
-        </label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          className="w-full border border-gray-300 rounded-md px-3 py-2"
-          ref={passwordRef}
-        />
+
+      <div className="space-y-10">
+        <Input placeholder="Email" type="email" />
+        <Input placeholder="Password" type="password" />
+        <Link href="TODO:" className="block font-semibold">
+          Forget Password?
+        </Link>
       </div>
-      <button
-        type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors"
-      >
-        Submit
+
+      <button type="submit" className="w-full bg-neutral-7 text-white py-2.5 rounded-lg">
+        Log in
       </button>
     </form>
   );
