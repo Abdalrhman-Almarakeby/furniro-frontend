@@ -9,7 +9,7 @@
   }
 
   .heading {
-    @apply font-medium -tracing-[1px];
+    @apply font-medium -tracking-[1px];
   }
 
   .h1 {
