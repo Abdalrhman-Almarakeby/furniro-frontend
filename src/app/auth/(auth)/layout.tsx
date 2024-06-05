@@ -8,24 +8,26 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <section className="grid grid-cols-2">
-      <div className="relative">
+    <section className="grid md:grid-cols-2">
+      <div className="relative" aria-hidden="true">
         <Image
           src={img}
-          alt="TODO:"
+          alt=""
           placeholder="blur"
           quality={100}
           priority={true}
-          className="object-cover w-full h-svh select-none"
+          className="object-cover w-full h-[50svh] md:h-full md:min-h-full lg:h-svh select-none"
         />
         <span
-          aria-hidden="true"
-          className="text-black absolute top-5 left-1/2 -translate-x-1/2 font-medium text-2xl"
+          className="text-black absolute top-5 left-1/2 -translate-x-1/2 font-medium text-3xl"
+          aria-label="Furniro"
         >
           Furniro
         </span>
       </div>
-      <div className="container">{children}</div>
+      <div className="container my-6 lg:my-10 max-w-md" role="main">
+        {children}
+      </div>
     </section>
   );
 }
