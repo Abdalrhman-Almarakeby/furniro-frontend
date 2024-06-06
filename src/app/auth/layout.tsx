@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ReactNode } from "react";
+import { UserEmailContextProvider } from "@/contexts/user-email";
 import img from "@/assets/imgs/auth-page-background.png";
 
 type LayoutProps = {
@@ -26,7 +27,7 @@ export default function Layout({ children }: LayoutProps) {
         </span>
       </div>
       <div className="container max-w-md" role="main">
-        {children}
+        <UserEmailContextProvider>{children}</UserEmailContextProvider>
       </div>
     </section>
   );

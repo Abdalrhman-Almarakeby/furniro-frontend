@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignupSchema, signupSchema } from "@/lib/schemas/signup";
 import { signup } from "@/services/auth";
+import { useUserEmail } from "@/contexts/user-email";
 
 export function useSignup() {
+  const { setUserEmail } = useUserEmail();
   const router = useRouter();
 
   const {
@@ -19,8 +21,9 @@ export function useSignup() {
   async function onSubmit(data: SignupSchema) {
     const { agreeOnTerms, ...rest } = data;
 
-    await signup(rest);
+    const user = await signup(rest);
 
+    setUserEmail(user.email);
     reset();
 
     router.push("/auth/verify-email");

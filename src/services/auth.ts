@@ -4,9 +4,8 @@ import { BackendTokens, User } from "@/types";
 import { SignupSchema } from "@/lib/schemas/signup";
 
 export async function signup(signupData: Omit<SignupSchema, "agreeOnTerms">) {
-  const res = await axios.post<User>("/auth/register", signupData);
-  console.log(res);
-  return res.data;
+  const { data } = await axios.post<User>("/auth/register", signupData);
+  return data;
 }
 
 export async function refreshToken(token: JWT): Promise<JWT> {
