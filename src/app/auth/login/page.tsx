@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { Form } from "./form";
 
 export default function Page() {
@@ -13,7 +14,9 @@ export default function Page() {
           </Link>
         </p>
       </div>
-      <Form />
+      <Suspense fallback="loading...">
+        <Form />
+      </Suspense>
     </section>
   );
 }
