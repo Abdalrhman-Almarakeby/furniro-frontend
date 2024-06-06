@@ -25,7 +25,7 @@ export default function Layout({ children }: LayoutProps) {
           Furniro
         </span>
       </div>
-      <div className="container my-6 lg:my-10 max-w-md" role="main">
+      <div className="container max-w-md" role="main">
         {children}
       </div>
     </section>

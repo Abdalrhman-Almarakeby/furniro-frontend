@@ -3,7 +3,7 @@ import { Form } from "./form";
 
 export default function Page() {
   return (
-    <section className="space-y-12">
+    <section className="space-y-12 my-6 lg:my-10">
       <div className="space-y-5">
         <h1 className="h4 text-neutral-7">Log in</h1>
         <p className="text-neutral-4">
