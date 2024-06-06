@@ -5,11 +5,11 @@
 @layer components {
   /* typography */
   .hero {
-    @apply font-medium text-8xl -tracking-[2%] leading-[96px];
+    @apply font-semibold text-8xl -tracking-[2%] leading-[96px];
   }
 
   .heading {
-    @apply font-medium -tracking-[1px];
+    @apply font-semibold -tracking-[1px];
   }
 
   .h1 {
@@ -17,7 +17,7 @@
   }
 
   .h2 {
-    @apply heading text-[4.5rem] leading-[76px] -tracing-[2px];
+    @apply heading text-[4.5rem] leading-[76px] -tracking-[2px];
   }
 
   .h3 {
