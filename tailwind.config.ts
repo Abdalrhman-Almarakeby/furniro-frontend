@@ -25,10 +25,10 @@ const config = {
         "neutral-5": "#343839",
         "neutral-6": "#232627",
         "neutral-7": "#141718",
-        blue: "#377dff",
-        green: "#38cb89",
-        orange: "#ffab00",
-        red: "#ff5630",
+        "accent-blue": "#377dff",
+        "accent-green": "#38cb89",
+        "accent-orange": "#ffab00",
+        "accent-red": "#ff5630",
       },
       keyframes: {
         "accordion-down": {
