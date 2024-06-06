@@ -4,6 +4,7 @@ import { axios } from "@/lib/axios";
 import { refreshToken } from "@/services/auth";
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     Credentials({
       name: "Credentials",
