@@ -10,14 +10,14 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <section className="grid md:grid-cols-2">
-      <div className="relative" aria-hidden="true">
+      <div className="relative h-full" aria-hidden="true">
         <Image
           src={img}
           alt=""
           placeholder="blur"
           quality={100}
           priority={true}
-          className="object-cover w-full h-[50svh] md:h-full md:min-h-full lg:h-svh select-none"
+          className="object-cover w-full h-[50svh] select-none md:min-h-svh"
         />
         <span
           className="text-black absolute top-5 left-1/2 -translate-x-1/2 font-medium text-3xl"
