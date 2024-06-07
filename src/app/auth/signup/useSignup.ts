@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SignupSchema, signupSchema } from "@/lib/schemas/signup";
+import { SignupSchema, signupSchema } from "@/lib/schemas";
 import { signup } from "@/services/auth";
 import { useUserEmail } from "@/contexts/user-email";
 

@@ -1,7 +1,7 @@
 import { JWT } from "next-auth/jwt";
 import { axios } from "@/lib/axios";
 import { BackendTokens, User } from "@/types";
-import { SignupSchema } from "@/lib/schemas/signup";
+import { SignupSchema } from "@/lib/schemas";
 
 export async function signup(signupData: Omit<SignupSchema, "agreeOnTerms">) {
   const { data } = await axios.post<User>("/auth/register", signupData);
