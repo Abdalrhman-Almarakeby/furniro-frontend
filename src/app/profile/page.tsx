@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/authOptions";
+import { authOptions } from "@/lib/auth-options";
 import { Btn } from "./btn";
 
 export default async function Page() {
