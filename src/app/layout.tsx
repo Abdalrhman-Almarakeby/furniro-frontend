@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Poppins } from "next/font/google";
 import { Providers } from "@/contexts/providers";
 
-import "./globals.css";
+import "./styles/globals.css";
 
 type LayoutProps = {
   children: ReactNode;
