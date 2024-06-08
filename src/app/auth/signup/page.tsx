@@ -9,7 +9,7 @@ export default function Page() {
         <h1 className="h4 text-neutral-7">Sing up</h1>
         <p className="text-neutral-4">
           Already have an account?{" "}
-          <Link href="/auth/login" className="text-green font-semibold">
+          <Link href="/auth/login" className="text-accent-green font-semibold">
             Log in
           </Link>
         </p>
