@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Footer } from "@/components/ui/footer";
 
 type LayoutProps = {
   children: ReactNode;
@@ -9,7 +10,7 @@ export default function layout({ children }: LayoutProps) {
     <div>
       <header>Header</header>
       {children}
-      <footer>Footer</footer>
+      <Footer />
     </div>
   );
 }
