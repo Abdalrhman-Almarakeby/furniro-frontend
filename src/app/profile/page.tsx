@@ -1,26 +1,24 @@
-import Image from "next/image";
+import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth-options";
-import { Btn } from "./btn";
 
 export default async function Page() {
   const session = await getServerSession(authOptions);
+  const user = session?.user;
 
-  if (!session) {
-    return "2";
+  if (!user) {
+    return redirect("/auth/login");
   }
 
-  const { profileImage, displayName, firstName, lastName, email, id } = session.user;
+  const { displayName, firstName, lastName, email, id } = user;
 
   return (
     <div>
-      <Image src={profileImage} alt="profile image" />
-      <p>Display Name: {displayName}</p>
+      <p>ID: {id}</p>
       <p>First Name: {firstName}</p>
       <p>Last Name: {lastName}</p>
+      <p>Display Name: {displayName}</p>
       <p>Email: {email}</p>
-      <p>ID: {id}</p>
-      <Btn id={id} />
     </div>
   );
 }
