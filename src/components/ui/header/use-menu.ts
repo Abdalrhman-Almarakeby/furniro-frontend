@@ -1,28 +1,16 @@
 import { useEffect, useState } from "react";
-import { useThrottle } from "@/lib/hooks";
+import { useThrottle, useWindowSize } from "@/lib/hooks";
 
 export function useMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const throttledIsOpen = useThrottle(isOpen);
-  const [windowWidth, setWindowWidth] = useState(0);
+  const windowSize = useWindowSize();
 
-  const isMenuHidden = windowWidth < 768 && !isOpen;
+  const isMenuHidden = windowSize.width ? windowSize.width < 768 && !isOpen : false;
 
   function toggle() {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   }
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    setWindowWidth(window.innerWidth);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useEffect(() => {
     let prevScrollPosition = 0;
