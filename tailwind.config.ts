@@ -7,12 +7,26 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
+      padding: {
+        DEFAULT: "2rem",
+        sm: "2rem",
+        md: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
       },
     },
     extend: {
+      spacing: {
+        4.5: "1.125rem",
+        6.5: "1.625rem",
+        7.5: "1.875rem",
+        11.5: "2.875rem",
+        12.5: "3.125rem",
+        15: "3.75rem",
+        24.5: "6.125rem",
+        30: "7.5rem",
+      },
       fontSize: {
         "2xl": "1.375rem",
         "3xl": "1.5rem",
@@ -39,10 +53,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "menu-open": {
+          from: { left: "-110%" },
+          to: { left: "0" },
+        },
+        "menu-close": {
+          from: { display: "flex", left: "0" },
+          to: { display: "none", left: "-110%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "menu-open": "menu-open 0.3s ease-in-out ",
+        "menu-close": "menu-close 0.3s ease-in-out ",
       },
     },
   },

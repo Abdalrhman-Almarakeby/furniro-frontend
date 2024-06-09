@@ -26,7 +26,7 @@ export default function Layout({ children }: LayoutProps) {
           Furniro
         </span>
       </div>
-      <div className="container max-w-md" role="main">
+      <div className="container max-w-md px-6" role="main">
         <UserEmailContextProvider>{children}</UserEmailContextProvider>
       </div>
     </section>
