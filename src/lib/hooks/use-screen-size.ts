@@ -1,14 +1,14 @@
 import { useState, useLayoutEffect } from "react";
 
 type WindowSize = {
-  width: number | null;
-  height: number | null;
+  width: number;
+  height: number;
 };
 
 export function useWindowSize(): WindowSize {
   const [size, setSize] = useState<WindowSize>({
-    width: null,
-    height: null,
+    width: 0,
+    height: 0,
   });
 
   useLayoutEffect(() => {

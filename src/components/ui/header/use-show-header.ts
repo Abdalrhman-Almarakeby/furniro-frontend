@@ -10,7 +10,7 @@ export function useShowHeader() {
 
   const MAX_TOP_POSITION = 100;
 
-  const isSmallScreen = windowSize.width && windowSize.width > 768;
+  const isSmallScreen = windowSize.width < 768;
 
   useEffect(() => {
     let lastScrollPosition = window.scrollY;

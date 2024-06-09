@@ -6,7 +6,7 @@ export function useMenu() {
   const throttledIsOpen = useThrottle(isOpen);
   const windowSize = useWindowSize();
 
-  const isMenuHidden = windowSize.width ? windowSize.width < 768 && !isOpen : false;
+  const isMenuHidden = windowSize.width < 768 && !isOpen;
 
   function toggle() {
     setIsOpen((prevIsOpen) => !prevIsOpen);
