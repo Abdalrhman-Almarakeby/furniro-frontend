@@ -4,28 +4,27 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 export default function Home() {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
+  const user = session?.user;
 
-  if (status === "loading") {
-    return <p>Loading...</p>;
-  }
-
-  if (session && session.user) {
+  if (!user) {
     return (
-      <>
-        <p>{session.user.displayName}</p>
-        <button onClick={() => signOut()}>Sing out</button>
+      <div className=" h-[1000px]">
+        <Link href={"/auth/login"}>Log in</Link>
+        <br />
+        <Link href={"/auth/signup"}>Sign up</Link>
         <br />
         <Link href={"/profile"}>Profile</Link>
-      </>
+      </div>
     );
   }
 
   return (
-    <div className="text-red-900">
-      <Link href={"/auth/login"}>Sing in</Link>
+    <div className="h-[1000px]">
+      <p>{user.displayName}</p>
+      <button onClick={() => signOut()}>Sing out</button>
       <br />
-      <Link href={"/auth/signup"}>Sing up</Link>
+      <Link href={"/profile"}>Profile</Link>
     </div>
   );
 }
