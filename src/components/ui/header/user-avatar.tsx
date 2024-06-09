@@ -8,8 +8,14 @@ export function UserAvatar() {
 
   return user ? (
     <Link href="/profile">
-      <Image src={user.profileImage} alt={`${user.displayName} profile image`} className="size-8" />
-      <div className="sr-onl">Go to profile</div>
+      <Image
+        src={user.profileImage}
+        alt={`${user.displayName} profile image`}
+        className="size-8"
+        width="32"
+        height="32"
+      />
+      <div className="sr-only">Go to profile</div>
     </Link>
   ) : (
     <div className="space-x-4 text-sm md:hidden">
