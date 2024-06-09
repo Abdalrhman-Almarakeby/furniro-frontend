@@ -20,7 +20,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div className="space-y-2">
-        <div className="relative w-full ">
+        <div className="relative w-full">
           <input
             ref={ref}
             id={id}
@@ -29,8 +29,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             placeholder=" "
             type={isPasswordInput ? passwordInputType : type}
             aria-label={placeholder}
+            aria-invalid={!!error}
+            aria-describedby={error ? `${id}-error` : undefined}
             className={cn(
-              "peer w-full border-b border-neutral-4 py-1 transition-colors bg-inherit focus:outline-none focus:border-neutral-7",
+              "peer w-full border-b border-neutral-4 py-1 transition-colors bg-inherit focus:border-neutral-7 focus:outline-none",
               className
             )}
             {...props}
@@ -38,7 +40,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           <label
             htmlFor={id}
             className={cn(
-              "absolute text-neutral-4 left-0 cursor-text text-xs -top-4 transition-all peer-focus:text-neutral-7 peer-focus:font-medium peer-placeholder-shown:top-1 peer-placeholder-shown:text-base"
+              "absolute left-0 -top-4 cursor-text text-xs text-neutral-4 transition-all peer-placeholder-shown:top-1 peer-placeholder-shown:text-base peer-focus:font-medium peer-focus:text-neutral-7"
             )}
           >
             {placeholder}
@@ -49,6 +51,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               onClick={() => setIsInputVisible((prev) => !prev)}
               aria-label={isInputVisible ? "Hide password" : "Show password"}
               className="absolute right-0 top-1/2 -translate-y-1/2"
+              tabIndex={0}
             >
               {isInputVisible ? (
                 <EyeOff color="#6c7275" size={18} />
@@ -58,7 +61,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             </button>
           )}
         </div>
-        {!!error && <p className="text-xs font-medium text-red-600">{error}</p>}
+        {!!error && (
+          <p id={`${id}-error`} className="text-xs font-medium text-red-600" role="alert">
+            {error}
+          </p>
+        )}
       </div>
     );
   }
