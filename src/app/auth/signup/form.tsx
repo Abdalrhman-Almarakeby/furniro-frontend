@@ -36,10 +36,10 @@ export function Form() {
           type="password"
         />
       </div>
-      <div className="space-y-2">
-        <div className="flex gap-3 items-center">
-          <Checkbox {...register("agreeOnTerms")} />{" "}
-          <p className="text-neutral-4 text-xs">
+      <Checkbox
+        {...register("agreeOnTerms")}
+        label={
+          <>
             I agree with{" "}
             <Link href="TODO:" className="text-neutral-7 font-semibold">
               Privacy Policy
@@ -48,15 +48,10 @@ export function Form() {
             <Link href="TODO:" className="text-neutral-7 font-semibold">
               Terms of Use
             </Link>
-          </p>
-        </div>
-        {!!errors.agreeOnTerms && (
-          <p className="text-xs font-medium text-red-600">
-            {errors.agreeOnTerms?.message?.toString()}
-          </p>
-        )}
-      </div>
-
+          </>
+        }
+        error={errors.agreeOnTerms?.message?.toString()}
+      />
       <button
         type="submit"
         disabled={isSubmitting}
