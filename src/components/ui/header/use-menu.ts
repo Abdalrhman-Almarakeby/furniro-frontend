@@ -4,10 +4,25 @@ import { useThrottle } from "@/lib/hooks";
 export function useMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const throttledIsOpen = useThrottle(isOpen);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  const isMenuHidden = windowWidth < 768 && !isOpen;
 
   function toggle() {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    setWindowWidth(window.innerWidth);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     let prevScrollPosition = 0;
@@ -32,6 +47,7 @@ export function useMenu() {
   }, [isOpen, setIsOpen]);
 
   return {
+    isMenuHidden,
     isOpen: throttledIsOpen,
     toggle,
   };

@@ -11,9 +11,7 @@ export function Navbar() {
   const session = useSession();
   const user = session.data?.user;
 
-  const { isOpen, toggle } = useMenu();
-
-  const isMenuHidden = window.innerWidth < 768 && !isOpen;
+  const { isMenuHidden, isOpen, toggle } = useMenu();
 
   return (
     <nav
