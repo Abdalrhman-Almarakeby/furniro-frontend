@@ -3,15 +3,18 @@ import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { Heart, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useMenu } from "./use-menu";
 
-export function Navbar() {
+type NavbarProps = {
+  isMenuHidden: boolean;
+  isOpen: boolean;
+  toggle: () => void;
+};
+
+export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
   const pathname = usePathname();
 
   const session = useSession();
   const user = session.data?.user;
-
-  const { isMenuHidden, isOpen, toggle } = useMenu();
 
   return (
     <nav

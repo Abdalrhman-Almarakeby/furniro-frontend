@@ -8,7 +8,7 @@ import { UserAvatar } from "./user-avatar";
 import { Navbar } from "./navbar";
 
 export function Header() {
-  const { isOpen, toggle } = useMenu();
+  const { isOpen, toggle, isMenuHidden } = useMenu();
   const showHeader = useShowHeader();
 
   return (
@@ -31,7 +31,7 @@ export function Header() {
         </button>
         <p className="text-xl font-semibold md:sr-only">Furniro</p>
       </div>
-      <Navbar />
+      <Navbar isOpen={isOpen} toggle={toggle} isMenuHidden={isMenuHidden} />
       <UserAvatar />
     </header>
   );
