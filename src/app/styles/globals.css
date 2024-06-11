@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply motion-safe:scroll-smooth;
+  }
+
+  img {
+    @apply h-auto max-w-full select-none bg-cover bg-no-repeat align-middle italic;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply max-w-[75ch];
+  }
+}
+
 @layer components {
   /* typography */
   .hero {
