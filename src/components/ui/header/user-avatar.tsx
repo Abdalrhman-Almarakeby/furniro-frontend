@@ -7,7 +7,7 @@ export function UserAvatar() {
   const user = session.data?.user;
 
   return user ? (
-    <Link href="/profile">
+    <Link href="/profile#">
       <Image
         src={user.profileImage}
         alt={`${user.displayName} profile image`}

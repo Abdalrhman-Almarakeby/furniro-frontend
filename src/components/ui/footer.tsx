@@ -15,13 +15,13 @@ export function Footer() {
             <p className="lg:pl-5">Furniture & Decoration Store</p>
           </div>
           <nav className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:ml-auto">
-            <Link href="/" className="px-5 py-2">
+            <Link href="/#" className="px-5 py-2">
               Home
             </Link>
-            <Link href="/shop" className="px-5 py-2">
+            <Link href="/shop#" className="px-5 py-2">
               Shop
             </Link>
-            <Link href="contact" className="px-5 py-2">
+            <Link href="/contact#" className="px-5 py-2">
               Contact Us
             </Link>
           </nav>
@@ -42,8 +42,8 @@ export function Footer() {
             </a>
           </div>
           <div className="space-x-7 font-semibold md:order-2">
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms-of-use">Terms Of Use</Link>
+            <Link href="/privacy-policy#">Privacy Policy</Link>
+            <Link href="/terms-of-use#">Terms Of Use</Link>
           </div>
           <p>Copyright © {year} Furniro. All rights reserved</p>
         </div>

@@ -22,7 +22,7 @@ export function Form() {
           placeholder="Password"
           type="password"
         />
-        <Link href="TODO:" className="block font-semibold">
+        <Link href="/#" className="block font-semibold">
           Forget Password?
         </Link>
       </div>

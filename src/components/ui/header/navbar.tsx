@@ -68,7 +68,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
         <>
           <Link
             onClick={() => isOpen && toggle()}
-            href="/profile"
+            href="/profile#"
             role="menuitem"
             className={cn(
               "flex items-center justify-between border-b border-neutral-4 py-3 text-lg text-neutral-4 mt-auto md:mt-0 md:ml-auto md:border-none"
@@ -84,7 +84,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
           </Link>
           <Link
             onClick={() => isOpen && toggle()}
-            href="/contact#"
+            href="/profile#"
             role="menuitem"
             className="flex items-center justify-between border-b border-neutral-4 py-3 text-lg text-neutral-4 md:border-none"
           >

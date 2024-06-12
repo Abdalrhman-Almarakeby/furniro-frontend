@@ -41,11 +41,11 @@ export function Form() {
         label={
           <>
             I agree with{" "}
-            <Link href="TODO:" className="text-neutral-7 font-semibold">
+            <Link href="/privacy-policy#" className="text-neutral-7 font-semibold">
               Privacy Policy
             </Link>{" "}
             and{" "}
-            <Link href="TODO:" className="text-neutral-7 font-semibold">
+            <Link href="/terms-of-use#" className="text-neutral-7 font-semibold">
               Terms of Use
             </Link>
           </>
