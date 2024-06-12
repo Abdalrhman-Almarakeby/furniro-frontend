@@ -13,8 +13,6 @@ This repository contains the front-end code for Furniro, an e-commerce platform 
 - Tailwindcss
 - NextAuth.js
 
-Deployment To build the app for production:
-
 ## Live Demo
 
 You can view a live demo hosted on Vercel:
