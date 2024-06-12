@@ -50,7 +50,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
         role="menuitem"
         className={cn(
           "border-b border-neutral-7 py-3 md:border-none",
-          pathname === "/about" && "md:bg-gray-500"
+          pathname.startsWith("/shop") && "md:text-neutral-7"
         )}
       >
         Shop
@@ -59,7 +59,10 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
         onClick={() => isOpen && toggle()}
         href="/contact#"
         role="menuitem"
-        className={cn("border-b border-neutral-7 py-3 md:border-none")}
+        className={cn(
+          "border-b border-neutral-7 py-3 md:border-none",
+          pathname.startsWith("/contact") && "md:text-neutral-7"
+        )}
       >
         Contact Us
       </Link>
