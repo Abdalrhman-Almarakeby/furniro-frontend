@@ -26,7 +26,7 @@ export function Footer() {
             </Link>
           </nav>
         </div>
-        <div className="flex flex-col items-center gap-7 py-4 md:flex-row md:justify-center">
+        <div className="flex flex-col items-center gap-7 py-4 md:flex-row md:justify-center md:gap-6">
           <div className="flex items-center gap-4 md:order-last lg:ml-auto">
             <a href="https://instagram.com" target="_blank" rel="noreferrer" className="px-2 py-2">
               <span className="sr-only">Instagram</span>
