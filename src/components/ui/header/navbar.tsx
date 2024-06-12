@@ -22,14 +22,11 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
       aria-hidden={isMenuHidden}
       role="menu"
       className={cn(
-        "absolute top-0 z-50 flex h-svh w-[80svw] flex-col self-stretch gap-5 bg-white pb-8 pt-20 px-5 text-base font-medium md:static md:flex md:h-auto md:w-auto md:grow md:flex-row md:items-center md:gap-4 md:p-0 md:pt-0 md:backdrop-blur-none 2xl:gap-1.5",
+        "absolute top-0 z-50 flex h-svh w-[80svw] flex-col self-stretch gap-5 bg-neutral-1 pb-8 pt-20 px-5 text-base font-medium md:static md:flex md:h-auto md:w-auto md:grow md:flex-row md:items-center md:gap-4 md:p-0 md:pt-0 md:backdrop-blur-none 2xl:gap-1.5",
         isOpen ? "left-0 flex animate-menu-open" : "-left-[110%] hidden animate-menu-close"
       )}
     >
-      <p
-        className="mr-auto hidden text-3xl font-semibold text-neutral-7 md:block"
-        aria-hidden="true"
-      >
+      <p className="mr-auto hidden text-3xl font-semibold md:block" aria-hidden="true">
         Furniro
       </p>
 
@@ -37,10 +34,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
         onClick={() => isOpen && toggle()}
         href="/#"
         role="menuitem"
-        className={cn(
-          "border-b border-neutral-7 py-3 md:border-none",
-          pathname === "/" && "md:text-neutral-7"
-        )}
+        className={cn("border-b py-3 md:border-none", pathname === "/" && "md:text-neutral-7")}
       >
         Home
       </Link>
@@ -49,7 +43,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
         href="/shop#"
         role="menuitem"
         className={cn(
-          "border-b border-neutral-7 py-3 md:border-none",
+          "border-b py-3 md:border-none",
           pathname.startsWith("/shop") && "md:text-neutral-7"
         )}
       >
@@ -60,7 +54,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
         href="/contact#"
         role="menuitem"
         className={cn(
-          "border-b border-neutral-7 py-3 md:border-none",
+          "border-b py-3 md:border-none",
           pathname.startsWith("/contact") && "md:text-neutral-7"
         )}
       >
@@ -80,7 +74,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
             <span className="md:hidden">Wishlist</span>{" "}
             <div className="flex items-center gap-4 text-neutral-7 md:gap-0">
               <Heart strokeWidth={2} />{" "}
-              <span className="grid place-items-center rounded-full size-5 bg-neutral-7 text-xs text-white">
+              <span className="grid place-items-center rounded-full size-5 bg-neutral-7 text-xs text-neutral-1">
                 {user.wishlist.length}
               </span>
             </div>
@@ -94,7 +88,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
             <span className="md:hidden">Cart</span>{" "}
             <div className="flex items-center gap-4 text-neutral-7 md:gap-0">
               <ShoppingBag strokeWidth={2} />{" "}
-              <span className="grid place-items-center rounded-full size-5 bg-neutral-7 text-xs text-white">
+              <span className="grid place-items-center rounded-full size-5 bg-neutral-7 text-xs text-neutral-1">
                 {/* // TODO: Update the code to show the cart product count instead of wishlist product count  */}
                 {user.wishlist.length}
               </span>
@@ -107,7 +101,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
             onClick={() => isOpen && toggle()}
             href="/auth/login"
             role="menuitem"
-            className="mt-auto md:mt-0 md:ml-auto rounded-lg border border-neutral-7 bg-neutral-7 px-4 py-1 text-center text-white"
+            className="mt-auto md:mt-0 md:ml-auto rounded-lg border bg-neutral-7 px-4 py-1 text-center text-neutral-1"
           >
             Log in
           </Link>
@@ -115,7 +109,7 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
             onClick={() => isOpen && toggle()}
             href="/auth/signup"
             role="menuitem"
-            className="rounded-lg border border-neutral-7 bg-white px-4 py-1 text-center text-neutral-7"
+            className="rounded-lg border bg-neutral-1 px-4 py-1 text-center text-neutral-7"
           >
             Sign up
           </Link>

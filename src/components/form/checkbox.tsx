@@ -14,7 +14,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <div className="space-y-2">
         <div className="flex items-center gap-3">
-          <div className="relative size-6 rounded-[4px] border border-neutral-7">
+          <div className="relative size-6 rounded-[4px] border">
             <input
               type="checkbox"
               role="checkbox"
@@ -24,7 +24,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
               aria-describedby={error ? `${id}-error` : undefined}
               aria-labelledby={`${id}-label`}
               className={cn(
-                "peer size-full appearance-none ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-950 disabled:cursor-not-allowed disabled:opacity-50 checked:bg-neutral-7",
+                "peer size-full appearance-none ring-offset-neutral-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-950 disabled:cursor-not-allowed disabled:opacity-50 checked:bg-neutral-7",
                 className
               )}
               {...props}

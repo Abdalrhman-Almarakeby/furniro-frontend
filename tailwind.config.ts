@@ -44,6 +44,9 @@ const config = {
         "accent-orange": "#ffab00",
         "accent-red": "#ff5630",
       },
+      borderColor: {
+        DEFAULT: "#141718",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

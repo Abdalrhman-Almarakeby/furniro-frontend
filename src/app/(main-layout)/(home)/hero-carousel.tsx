@@ -75,15 +75,15 @@ export default function HeroCarousel() {
             {Array.from({ length: count }).map((_, i) => (
               <div
                 className={cn(
-                  "size-1.5 bg-white rounded-full transition-[width]",
+                  "size-1.5 bg-neutral-1 rounded-full transition-[width]",
                   i + 1 === current && "w-5"
                 )}
                 key={i}
               ></div>
             ))}
           </div>
-          <CarouselPrevious className="hidden sm:grid bg-white place-items-center left-2 absolute top-1/2 -translate-y-1/2" />
-          <CarouselNext className="hidden sm:grid bg-white place-items-center right-2 absolute top-1/2 -translate-y-1/2" />
+          <CarouselPrevious className="hidden sm:grid bg-neutral-1 place-items-center left-2 absolute top-1/2 -translate-y-1/2" />
+          <CarouselNext className="hidden sm:grid bg-neutral-1 place-items-center right-2 absolute top-1/2 -translate-y-1/2" />
         </Carousel>
       </div>
     </section>

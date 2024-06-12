@@ -14,11 +14,11 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed left-0 z-40 w-full mx-auto flex items-center justify-between bg-white px-4 text-base text-neutral-7 transition-[top] duration-300 md:static md:container md:flex md:justify-end md:gap-4 md:py-5 md:text-neutral-4 2xl:text-lg",
+        "fixed left-0 z-40 w-full mx-auto flex items-center justify-between bg-neutral-1 px-4 text-base transition-[top] duration-300 md:static md:container md:flex md:justify-end md:gap-4 md:py-5 md:text-neutral-4 2xl:text-lg",
         showHeader ? "top-0" : "-top-full md:top-0"
       )}
     >
-      <MenuBtn isOpen={isOpen} toggle={toggle}/>
+      <MenuBtn isOpen={isOpen} toggle={toggle} />
       <Navbar isOpen={isOpen} toggle={toggle} isMenuHidden={isMenuHidden} />
       <UserAvatar />
     </header>

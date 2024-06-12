@@ -7,6 +7,11 @@
     @apply motion-safe:scroll-smooth;
   }
 
+  html,
+  body {
+    @apply text-neutral-7;
+  }
+
   img {
     @apply h-auto max-w-full select-none bg-cover bg-no-repeat align-middle italic;
   }

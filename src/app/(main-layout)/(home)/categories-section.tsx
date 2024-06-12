@@ -6,7 +6,7 @@ import { CategoryCardLink } from "./category-card-link";
 
 export function CategoriesSection() {
   return (
-    <section className="grid container gap-4 text-neutral-7 md:grid-cols-2">
+    <section className="grid container gap-4 md:grid-cols-2">
       {/* // TODO: Add search params to the link component href to filter the product with  */}
       <div className="relative row-span-2">
         <Image src={img1} alt="" aria-hidden="true" />

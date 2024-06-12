@@ -3,11 +3,12 @@ import { HTMLAttributes } from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type CategoryCardProps = LinkProps & HTMLAttributes<HTMLAnchorElement> &{
-  category:string
-};
+type CategoryCardProps = LinkProps &
+  HTMLAttributes<HTMLAnchorElement> & {
+    category: string;
+  };
 
-export function CategoryCardLink({ category, className, ...props}: CategoryCardProps) {
+export function CategoryCardLink({ category, className, ...props }: CategoryCardProps) {
   return (
     <Link
       className={cn(
@@ -17,7 +18,7 @@ export function CategoryCardLink({ category, className, ...props}: CategoryCardP
       {...props}
     >
       <span className="h6 lg:h5">{category}</span>
-      <span className="text-sm  items-center flex gap-1 font-medium border-b border-b-neutral-7 justify-self-start lg:text-base">
+      <span className="text-sm  items-center flex gap-1 font-medium border-b justify-self-start lg:text-base">
         Shop now
         <ArrowRight className="size-4 lg:size-5" />
       </span>

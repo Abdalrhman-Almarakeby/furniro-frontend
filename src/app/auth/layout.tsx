@@ -23,7 +23,7 @@ export default function Layout({ children }: LayoutProps) {
         />
         <Link
           href="/#"
-          className="text-neutral-7 absolute top-5 left-1/2 -translate-x-1/2 text-3xl font-semibold"
+          className="absolute top-5 left-1/2 -translate-x-1/2 text-3xl font-semibold"
           aria-label="Go back to home page"
         >
           Furniro

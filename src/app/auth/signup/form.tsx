@@ -55,7 +55,7 @@ export function Form() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-neutral-7 text-white py-2.5 rounded-lg disabled:bg-neutral-5"
+        className="w-full bg-neutral-7 text-neutral-1 py-2.5 rounded-lg disabled:bg-neutral-5"
       >
         Sign up
       </button>

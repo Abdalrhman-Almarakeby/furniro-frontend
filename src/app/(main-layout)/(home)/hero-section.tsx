@@ -5,7 +5,7 @@ export function HeroSection() {
     <section className="space-y-8 pb-10">
       <HeroCarousel />
       <div className="container flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <h1 className="h4 lg:text-5xl 2xl:text-7xl text-neutral-7 text-balance">
+        <h1 className="h4 lg:text-5xl 2xl:text-7xl text-balance">
           <span className="whitespace-nowrap">
             Simply Unique <span className="text-neutral-4">/</span>
           </span>{" "}

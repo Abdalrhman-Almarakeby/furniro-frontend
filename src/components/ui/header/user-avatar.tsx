@@ -19,16 +19,10 @@ export function UserAvatar() {
     </Link>
   ) : (
     <div className="space-x-4 text-sm md:hidden">
-      <Link
-        href="/auth/login"
-        className="rounded-lg border border-neutral-7 bg-neutral-7 py-2 px-4 text-white"
-      >
+      <Link href="/auth/login" className="rounded-lg border bg-neutral-7 py-2 px-4 text-neutral-1">
         Log in
       </Link>
-      <Link
-        href="/auth/signup"
-        className="rounded-lg border border-neutral-7 bg-white py-2 px-4 text-neutral-7"
-      >
+      <Link href="/auth/signup" className="rounded-lg border bg-neutral-1 py-2 px-4">
         Sign up
       </Link>
     </div>
