@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils";
 
 type CategoryCardProps = LinkProps &
   HTMLAttributes<HTMLAnchorElement> & {
-    category: string;
+    children: string;
   };
 
-export function CategoryCardLink({ category, className, ...props }: CategoryCardProps) {
+export function ActionLink({ children, className, ...props }: CategoryCardProps) {
   return (
     <Link
       className={cn(
@@ -17,7 +17,7 @@ export function CategoryCardLink({ category, className, ...props }: CategoryCard
       )}
       {...props}
     >
-      <span className="h6 lg:h5">{category}</span>
+      <span className="h6 lg:h5">{children}</span>
       <span className="text-sm items-center flex gap-1 font-medium border-b justify-self-start lg:text-base">
         Shop now
         <ArrowRight className="size-4 lg:size-5" />
