@@ -26,7 +26,10 @@ export function Navbar({ isOpen, toggle, isMenuHidden }: NavbarProps) {
         isOpen ? "left-0 flex animate-menu-open" : "-left-[110%] hidden animate-menu-close"
       )}
     >
-      <p className="mr-auto hidden text-3xl font-semibold md:block" aria-hidden="true">
+      <p
+        className="text-neutral-7 mr-auto hidden text-3xl font-semibold md:block"
+        aria-hidden="true"
+      >
         Furniro
       </p>
 
