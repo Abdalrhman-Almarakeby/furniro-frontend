@@ -6,10 +6,15 @@ import { Input } from "@/components/form/input";
 import { Checkbox } from "@/components/form/checkbox";
 
 export function Form() {
-  const { register, errors, isSubmitting, handleSubmit } = useSignup();
+  const { register, errors, isSubmitting, signupError, handleSubmit } = useSignup();
 
   return (
     <form onSubmit={handleSubmit} className="space-y-12">
+      {!!signupError && (
+        <p className="text-sm font-medium text-red-600" role="alert">
+          {signupError}
+        </p>
+      )}
       <div className="space-y-10">
         <Input
           {...register("firstName")}
