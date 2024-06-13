@@ -1,5 +1,6 @@
 import { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import { isAxiosError } from "axios";
 import { axios } from "@/lib/axios";
 import { refreshToken } from "@/services/auth";
 
@@ -25,16 +26,25 @@ export const authOptions: NextAuthOptions = {
 
         const { email, password } = credentials;
 
-        const { data: session, status } = await axios.post("/auth/login", {
-          email,
-          password,
-        });
+        try {
+          const res = await axios.post("/auth/login", {
+            email,
+            password,
+          });
 
-        if (status !== 201) {
-          return null;
+          const isOk = res.status.toString().startsWith("2");
+          if (isOk && res.data) {
+            return res.data;
+          } else {
+            throw new Error(res.data.message || "Some thing went wrong please try agin later");
+          }
+        } catch (error) {
+          throw new Error(
+            isAxiosError(error)
+              ? error.response?.data.message
+              : "Some thing went wrong please try later"
+          );
         }
-
-        return session;
       },
     }),
   ],
@@ -60,6 +70,7 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: "/auth/login",
+    error: "/auth/login",
     verifyRequest: "/auth/verify-email",
   },
 };

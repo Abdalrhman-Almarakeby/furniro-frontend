@@ -1,14 +1,19 @@
 "use client";
 
-import { Input } from "@/components/form/input";
 import Link from "next/link";
+import { Input } from "@/components/form/input";
 import { useLogin } from "./useLogin";
 
 export function Form() {
-  const { register, errors, isSubmitting, handleSubmit } = useLogin();
+  const { register, errors, isSubmitting, handleSubmit, logInError } = useLogin();
 
   return (
     <form onSubmit={handleSubmit} className="space-y-12">
+      {!!logInError && (
+        <p className="text-sm font-medium text-red-600" role="alert">
+          {logInError}
+        </p>
+      )}
       <div className="space-y-10">
         <Input
           {...register("email")}
