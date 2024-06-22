@@ -1,6 +1,6 @@
 # Furniro Frontend
 
-This repository contains the front-end code for Furniro, an e-commerce platform for furniture.
+This repository contains the front-end code for Furniro, an e-commerce platform for furniture store.
 
 ## Overview
 
